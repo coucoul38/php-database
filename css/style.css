@@ -1,0 +1,35 @@
+body{
+    background-color: white
+     /*#b0bec5*/;
+     cursor: auto;
+}
+
+#navbar{
+    position: sticky;
+    top: 0;
+    z-index: 20;
+}
+
+h1{
+    font-family: Rubik;
+    color: black;
+}
+
+.title{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.caption{
+    background: white;
+    border-radius: 10px;
+    padding: 0%;
+}
+
+.width100{
+    width: 100%;
+}
+
+#vmw{
+    scroll-margin-top: -17em;
+}
