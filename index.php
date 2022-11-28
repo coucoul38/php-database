@@ -1,52 +1,14 @@
 <!DOCTYPE html>
   <html lang="fr">
     <head>
-      <meta charset="UTF-8">
-      <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--FontAwesome icons import-->
-      <script src="https://kit.fontawesome.com/5fb9f9b90e.js" crossorigin="anonymous"></script>
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen">
-      <link type="text/css" rel="stylesheet" href="css/style.css">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Silkscreen|Rubik|Montserrat">
-      <!--Import Animate.css-->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-      
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Projets Noham et Justin</title>
+      <?php 
+      $title = "kid amogus but backwards";
+      require "components/head.php"; 
+      ?>
     </head>
 
     <body>
-      <!--Navbar-->
-      <nav class="cyan darken-4" id="navbar">
-        <div class="nav-wrapper">
-          <a href="index.html" class="brand-logo center"><i class="fa-solid fa-mug-saucer hide-on-small-only"></i>ProjeTea</a>
-          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-          <div class="left hide-on-large-only">Menu</div>
-          <ul class="left hide-on-med-and-down">
-            <li class="waves-effect waves-light"><a href="helltaker.html">Site Helltaker</a></li>
-            <li class="waves-effect waves-light"><a href="minecraft.html">Serveur Minecraft</a></li>
-            <li class="waves-effect waves-light"><a href="murder_drones.html">Murder Drones</a></li>
-          </ul>
-        </div>
-      </nav>
-      <!--Navbar mobile and tablet-->
-      <ul class="sidenav" id="mobile-demo">
-        <li class="waves-effect waves-light">
-          <a href="index.html">Accueil</a>
-        </li>
-        <li>
-          <a href="helltaker.html">Site Helltaker</a>
-        </li>
-        <li>
-          <a href="minecraft.html">Serveur Minecraft</a>
-        </li>
-        <li>
-          <a href="murder_drones.html">Murder Drones</a>
-        </li>
-      </ul>
+      <?php require "components/navbar.php"; ?>
 
       <h1 class="title center">Accueil</h1>
 
@@ -150,45 +112,7 @@
         </div>
       </div>
       
-
-
-      <!--Footer-->
-      <footer class="page-footer cyan darken-4">
-          <div class="row">
-            <div class="col l6 s12 center">
-              <h3 class="white-text">Ce site vous est proposé par :</h3>
-              <p class="grey-text text-lighten-4">Noham COULON et Justin Killingback</p>
-              <!-- Modal Trigger -->
-              <a class="green waves-effect waves-light btn modal-trigger " href="#modal1">Contact</a>
-            </div>
-            
-          </div>
-          
-          <!-- Modal Structure -->
-           <div id="modal1" class="modal bottom-sheet">
-             <div class="modal-content green-text">
-               <h4>Formulaire de contact</h4>
-               <p>N'hésitez pas à nous envoyer vos commentaires!</p>
-                <form>
-                  <label for="input1">Votre mail</label>
-                  <input type="text" id="input1" name="name" placeholder="Entrez votre mail ">
-                  <br>
-                  <label for="input2">Commentaire</label>
-                  <input type="text" id="input2" name="text" placeholder="Ecrivez un commentaire ou une question">
-                  <br>
-                  <input type="submit" value="Envoyer">
-                </form>
-             </div>
-             <div class="modal-footer">
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Nope</a>
-             </div>
-            </div>
-        <div class="footer-copyright">
-          <div class="container">
-            <span class="bepis">© 2022 Bepis group</span>
-          </div>
-        </div>
-      </footer>
+      <?php require "components/footer.php" ?>
 
       <!--JavaScript at end of body for optimized loading-->
       <script src="js/jquery.min.js"></script>
