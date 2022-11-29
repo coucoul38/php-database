@@ -15,11 +15,12 @@ if(empty($user)){ //vérifie si le resultat est vide !
      $_SESSION['user'] = $user; //on enregistre que l'utilisateur est connecté
      echo "amogus";
 }
-
-if($_GET['sentToDB']==FALSE){
-     echo "Vous n'avez pas rempli tous les champs"
+if(isset($_GET['username']) && isset($_GET['password'])){
+     header('Location:../account.php?id=login');//on le redirige sur la page d'accueil du site !
+}
+else{
+     header('Location:../account.php?id=login&sent=false');//on le redirige sur la page d'accueil du site !
 }
 echo "Password: ".$password;
 echo " Username: ".$username;
-header('Location:../account.php');//on le redirige sur la page d'accueil du site !
 ?>

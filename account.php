@@ -60,7 +60,16 @@
         echo "<form method='post' action=\"actions/logout.php\">
           <input type='submit' name='logout' value='Se déconnecter'>
         </form>";
-      }?>
+      }
+
+      if(isset($_GET['sent'])){
+        echo "<h4 class=\"red center-align\">Vous n'avez pas rempli tous les champs</h4>";
+      }
+
+      ?>
+
+
+
       
 
     </body>

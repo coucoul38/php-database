@@ -31,6 +31,6 @@ if($sendToDb){
     header('Location:../account.php');//on le redirige sur la page d'accueil du site !
 }
 else{
-    header('Location:../account.php?sentToDB=FALSE');//on le redirige sur la page d'accueil du site !
+    header('Location:../account.php?sent=false');//on le redirige sur la page d'accueil du site !
 }
 ?>
