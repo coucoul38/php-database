@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
   <html lang="fr">
     <head>
@@ -55,7 +56,10 @@
       </div>
       <?php } 
       else{
-        echo "amogus";
+        echo "Bienvenue ".$_SESSION['user']['username'];
+        echo "<form method='post' action=\"actions/logout.php\">
+          <input type='submit' name='logout' value='Se déconnecter'>
+        </form>";
       }?>
       
 
