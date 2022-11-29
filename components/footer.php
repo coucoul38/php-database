@@ -16,11 +16,14 @@
            <h4>Formulaire de contact</h4>
            <p>N'hésitez pas à nous envoyer vos commentaires!</p>
             <form method="post" action="actions/mail.php">
-              <label for="subject">Objet</label>
-              <input type="text" id="subject" name="subject" placeholder="De quoi voulez-vous nous parler?">
+              <label for="1">Objet</label>
+              <input type="text" id="1" name="subject" placeholder="De quoi voulez-vous nous parler?">
               <br>
               <label for="msg">Commentaire</label>
               <input type="text" id="msg" name="msg" placeholder="Ecrivez un commentaire ou une question">
+              <br>
+              <label for="email">Votre adresse Mail</label>
+              <input type="text" id="email" name="email" placeholder="L'adresse mail à laquelle nous pouvons vous répondre">
               <br>
               <input type="submit" value="Envoyer">
             </form>
