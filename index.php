@@ -2,7 +2,7 @@
   <html lang="fr">
     <head>
       <?php 
-      $title = "kid amogus but backwards";
+      $title = "Php projet Noham et Justin";
       require "components/head.php"; 
       ?>
     </head>
@@ -39,7 +39,7 @@
         </ul>
       </div>
           
-
+      
       <!--Collapsible-->
       <div class="row container">
         <div class="col l6 m6 s12">
