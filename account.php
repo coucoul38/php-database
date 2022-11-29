@@ -2,7 +2,7 @@
   <html lang="fr">
     <head>
       <?php 
-      $title = "kid amogus but backwards";
+      $title = "Account";
       require "components/head.php"; 
       ?>
     </head>
