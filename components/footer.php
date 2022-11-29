@@ -15,12 +15,12 @@
          <div class="modal-content green-text">
            <h4>Formulaire de contact</h4>
            <p>N'hésitez pas à nous envoyer vos commentaires!</p>
-            <form>
-              <label for="input1">Votre mail</label>
-              <input type="text" id="input1" name="name" placeholder="Entrez votre mail ">
+            <form method="post" action="actions/mail.php">
+              <label for="subject">Objet</label>
+              <input type="text" id="subject" name="subject" placeholder="De quoi voulez-vous nous parler?">
               <br>
-              <label for="input2">Commentaire</label>
-              <input type="text" id="input2" name="text" placeholder="Ecrivez un commentaire ou une question">
+              <label for="msg">Commentaire</label>
+              <input type="text" id="msg" name="msg" placeholder="Ecrivez un commentaire ou une question">
               <br>
               <input type="submit" value="Envoyer">
             </form>
