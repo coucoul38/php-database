@@ -106,7 +106,7 @@
                   <br>Les détails, les couleurs et les animations sont dignes d'un studio professionnel.
                   <br>Les personnages sont droles et leur design "mignon" contraste bien avec le monde post-apocalyptique.
                   <br><a href="https://www.youtube.com/watch?v=mImFz8mkaHo" target="_blank">Nous vous recommandons de regarder ce premier épisode.</a> 
-                  <br>aming🤩😎
+                  <br>killer robots🤩😎
                 </p>
               </div>
             </div>
