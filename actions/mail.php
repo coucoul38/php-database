@@ -13,6 +13,7 @@
     if(empty($subject)){
         $subject = "Commentaire sur le site"
     }
+    //envoie le mail
     if($send){
         mail($to, $subject, $message);
     }    
