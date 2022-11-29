@@ -20,5 +20,5 @@ $pre->execute($dataBinded);
 //la donnée est liée au bind !
 //lorsqu'on execute la requête, on indique à quelles données correspondent chaque "bind"
 
-header('Location:../index.php');//on le redirige sur la page d'accueil du site !
+header('Location:../account.php');//on le redirige sur la page d'accueil du site !
 ?>

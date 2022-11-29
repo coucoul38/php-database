@@ -53,7 +53,10 @@
           </div>
         </div>
       </div>
-      <?php } ?>
+      <?php } 
+      else{
+        echo "amogus";
+      }?>
       
 
     </body>
