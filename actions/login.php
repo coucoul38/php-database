@@ -15,6 +15,10 @@ if(empty($user)){ //vérifie si le resultat est vide !
      $_SESSION['user'] = $user; //on enregistre que l'utilisateur est connecté
      echo "amogus";
 }
+
+if($_GET['sentToDB']==FALSE){
+     echo "Vous n'avez pas rempli tous les champs"
+}
 echo "Password: ".$password;
 echo " Username: ".$username;
 header('Location:../account.php');//on le redirige sur la page d'accueil du site !
