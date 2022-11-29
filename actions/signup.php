@@ -28,14 +28,9 @@ else{
 if($sendToDb){
     $pre = $pdo->prepare($sql);
     $pre->execute($dataBinded);
+    header('Location:../account.php');//on le redirige sur la page d'accueil du site !
 }
 else{
     header('Location:../account.php?sentToDB=FALSE');//on le redirige sur la page d'accueil du site !
 }
-//:email et :password sont bindés dans ma requêtes
-//mon tableau dataBinded réutilise ces clés bindées :email et :password
-//la donnée est liée au bind !
-//lorsqu'on execute la requête, on indique à quelles données correspondent chaque "bind"
-
-header('Location:../account.php');//on le redirige sur la page d'accueil du site !
 ?>
