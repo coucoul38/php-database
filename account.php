@@ -25,19 +25,19 @@
                 }?>
               </div>
               <p>
-                <?php if($_GET['id']=="login"){
-                  require "actions/login.php";
-                  echo "<form method=\"post\" action=\"login.php\">
+                <?php if(isset($_GET['id']) && $_GET['id']=="login"){
+                  echo "<form method=\"post\" action=\"actions/login.php\">
                   <input type='text' name='username' placeholder=\"Pseudonyme\" class=\"white-text\">
                   <input type='password' name='password' placeholder=\"Mot de passe\" class=\"white-text\">
+                  <input type='submit' name='login' value='Se connecter'>
               </form>";
                 }
                 else{
-                  require "actions/signup.php";
-                  echo "<form method=\"post\" action=\"signup.php\">
+                  echo "<form method=\"post\" action=\"actions/signup.php\">
                   <input type='text' name='username' placeholder=\"Pseudonyme\" class=\"white-text\">
                   <input type='email' name='email' placeholder=\"Email\" class=\"white-text\">
                   <input type='password' name='password' placeholder=\"Mot de passe\" class=\"white-text\">
+                  <input type='submit' name='signup' value='Créer le compte'>
               </form>";
                 }?>
               </p>
