@@ -6,9 +6,9 @@ echo "</pre>"
 
 <?php
 require_once "../cfg/config.php"; 
-$sql = "INSERT INTO user(username,email,password) VALUES(:username,:email,:password)";
+$sql = "INSERT INTO users(username,email,password) VALUES(:username,:email,:password)";
 $dataBinded=array(
-    ':username' => $_POST['username']
+    ':username' => $_POST['username'],
     ':email'   => $_POST['email'],
     ':password'=> $_POST['password']
 );
