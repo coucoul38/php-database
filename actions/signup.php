@@ -6,20 +6,28 @@ echo "</pre>"
 
 <?php
 require_once "../cfg/config.php"; 
+$username = $_POST['username'];
+$email = $_POST['email'];
+$password = $_POST['password'];
+
 $sql = "INSERT INTO users(username,email,password) VALUES(:username,:email,:password)";
 $dataBinded=array(
-    ':username' => $_POST['username'],
-    ':email'   => $_POST['email'],
-    ':password'=> $_POST['password']
+    ':username' => $username,
+    ':email'   => $email,
+    ':password'=> $password 
 );
-if(empty($_POST['username'])){
+
+if(empty($username)){
     $sendToDb = FALSE;
+    $_SESSION['error']="Vous n'avez pas mis de pseudonyme";
 }
-elseif(empty($_POST['email'])){
+elseif(empty($password)){
     $sendToDb = FALSE;
+    $_SESSION['error']="Vous n'avez pas mis de mot de passe";
 }
-elseif(empty($_POST['password'])){
+elseif(empty($email)){
     $sendToDb = FALSE;
+    $_SESSION['error']="Vous n'avez pas mis d'email";
 }
 else{
     $sendToDb = TRUE;
@@ -28,9 +36,10 @@ else{
 if($sendToDb){
     $pre = $pdo->prepare($sql);
     $pre->execute($dataBinded);
-    header('Location:../account.php');//on le redirige sur la page d'accueil du site !
+    header('Location:../account.php?id=login');//on le redirige sur la page d'accueil du site
 }
 else{
-    header('Location:../account.php?sent=false');//on le redirige sur la page d'accueil du site !
+    echo $_SESSION['error'];
+    header('Location:../account.php?id=signup');//on le redirige sur la page d'accueil du site !
 }
 ?>

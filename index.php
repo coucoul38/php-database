@@ -8,7 +8,8 @@
     </head>
 
     <body>
-      <?php require "components/navbar.php"; ?>
+      <?php require "components/navbar.php"; 
+      require "cfg/config.php";?>
 
       <h1 class="title center">Accueil</h1>
 

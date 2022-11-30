@@ -1,4 +1,3 @@
-<?php session_start() ?>
 <!DOCTYPE html>
   <html lang="fr">
     <head>
@@ -9,10 +8,11 @@
     </head>
 
     <body>
-      <?php require "components/navbar.php"; ?>
+      <?php require "components/navbar.php"; 
+      require "cfg/config.php"?>
 
       <h1 class="title center">Mon compte</h1>
-      <?php if(!isset($_SESSION['user'])){?>
+      <?php if(!isset($_SESSION['user'])){ //Si l'utilisateur n'est pas connecté ?>
         <div class="row">
         <div class="col s12 m6 offset-m3">
           <div class="card cyan darken-4">
@@ -55,17 +55,24 @@
         </div>
       </div>
       <?php } 
+      //Si l'utilisateur est connecté
       else{
         echo "Bienvenue ".$_SESSION['user']['username'];
+        if($_SESSION['user']['admin']==1){
+          echo "Vous êtes admin!";
+          echo "<form method='post' action=\"admin.php\">
+          <input type='submit' name='adminPanel' value='Pannel admin'>
+        </form>";
+        }
         echo "<form method='post' action=\"actions/logout.php\">
           <input type='submit' name='logout' value='Se déconnecter'>
         </form>";
       }
 
-      if(isset($_GET['sent'])){
-        echo "<h4 class=\"red center-align\">Vous n'avez pas rempli tous les champs</h4>";
+      if(isset($_SESSION['error'])){
+        echo "<h4 class=\"red center-align\">".$_SESSION['error']."</h4>";
       }
-
+      unset($_SESSION['error']);
       ?>
 
 

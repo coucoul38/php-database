@@ -1,5 +1,3 @@
-<?php require "cfg/config.php"; ?>
-
 <head>
     <meta charset="UTF-8">
     <!--Import Google Icon Font-->

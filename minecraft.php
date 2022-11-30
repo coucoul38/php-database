@@ -8,7 +8,8 @@
     </head>
    
     <body>
-      <?php require "components/navbar.php"; ?>
+      <?php require "components/navbar.php"; 
+      require "cfg/config.php";?>
       <h1 class="center title animate__animated easter_egg_title"> Serveur de mini-jeux Minecraft</h1>
       <audio id="death" src="/audio/scream_disappear.mp3" preload="auto"></audio>
        

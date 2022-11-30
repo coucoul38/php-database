@@ -1,18 +1,33 @@
-<?php require "cfg/config.php"; 
-if(!isset($_SESSION['user']) || $_SESSION['user']['admin']==0){
-    header('Location: index.php');
-    exit();
-}
-?>
-
+<?php require "cfg/config.php";?>
 
 <!DOCTYPE html>
-<html lang="fr" dir="ltr">
+<html lang="fr">
     <head>
-        <meta charset="utf-8">
-        <title>Panel admin</title>
+      <?php 
+      $title = "Php projet Noham et Justin";
+      require "components/head.php"; 
+      ?>
     </head>
+
     <body>
-        <h1>Panel admin</h1>
+        <?php require "components/navbar.php";
+        if(empty($_SESSION['user'])){
+            //header('Location: index.php');
+            echo "Vous n'êtes pas connécté";
+            exit();
+        }
+        elseif($_SESSION['user']['admin']==1){
+            echo "Tah le panel admin";
+            foreach()
+        }
+        else{
+            //header('Location: index.php');
+            echo "Vous n'êtes pas admin";
+            exit();
+        }
+        ?>
     </body>
 </html>
+
+
+

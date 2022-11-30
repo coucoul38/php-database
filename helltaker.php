@@ -8,7 +8,8 @@
     </head>
    
     <body>
-        <?php require "components/navbar.php"; ?>
+        <?php require "components/navbar.php"; 
+        require "cfg/config.php";?>
         <h1 class="center title"> Fansite : Présentation du jeu Helltaker</h1>
        
         <!--Paralaxe-->
