@@ -36,8 +36,8 @@
                 echo "Password : ".$user[3]."<br>";
                 echo $user[4]==0?"Utilisateur":"Admin";
                 ?>
-                <form method="post" action="deleteUser.php">
-                    <input type="hidden" name="id" value=<?php$user[0]?>>
+                <form method='post' action="actions/deleteUser.php">
+                    <input type='hidden' name="id" value="<?php echo $user[0]; ?>">
                     <input type='submit' value='Delete user'>
                 </form>
                 <br><br>
