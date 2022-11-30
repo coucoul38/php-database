@@ -11,6 +11,4 @@ else{
     $pre->execute();
     header("Location:../admin.php");//on le redirige sur la page d'accueil du site !
 }
-
-
 ?>
