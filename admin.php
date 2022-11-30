@@ -18,7 +18,32 @@
         }
         elseif($_SESSION['user']['admin']==1){
             echo "Tah le panel admin";
-            foreach()
+            $sql = "SELECT COUNT(*) FROM users";
+            $pre = $pdo->prepare($sql); 
+            $pre->execute();
+            $userCount = $pre->fetchColumn();
+            echo "<br>Il y a ".$userCount." utilisateurs en tout!<br>";
+
+            $sql = "SELECT * FROM users";
+            $pre = $pdo->prepare($sql); 
+            $pre->execute();
+            $userList = $pre->fetchall();
+            //print_r($userList);
+            foreach($userList as $user){
+                echo "ID : ".$user[0]."<br>"; 
+                echo "Username : ".$user[1]."<br>";
+                echo "Email : ".$user[2]."<br>";
+                echo "Password : ".$user[3]."<br>";
+                echo $user[4]==0?"Utilisateur":"Admin";
+                ?>
+                <form method="post" action="deleteUser.php">
+                    <input type="hidden" name="id" value=<?php$user[0]?>>
+                    <input type='submit' value='Delete user'>
+                </form>
+                <br><br>
+                
+                <?php
+            }
         }
         else{
             //header('Location: index.php');
@@ -26,6 +51,7 @@
             exit();
         }
         ?>
+        
     </body>
 </html>
 
