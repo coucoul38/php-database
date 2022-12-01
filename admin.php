@@ -80,7 +80,6 @@
                         <input type='hidden' name='admin' value="<?php echo $user[4]; ?>">
                         <input type='submit' value='<?php echo $user[4]==0?"Utilisateur":"Admin"?>'>
                     </form>
-                    <br><br>
                     <?php
                 }
             }
