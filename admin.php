@@ -34,7 +34,7 @@
                 ?>
                 <form method='post' action="actions/renameUser.php">
                     <input type='hidden' name="id" value="<?php echo $user[0]; ?>">
-                    <input type='text' name="name" value="<?php echo $user[1] ?>">
+                    <input type='text' name="username" value="<?php echo $user[1] ?>">
                     <input type='submit' value="Change name">
                 </form>
                 <?php
