@@ -125,12 +125,16 @@
                     <textarea name="p1"><?php echo $home[0][2] ?></textarea>
                     <label for="h2">Second title</label>
                     <input type="text" method="post" name="h2" value="<?php echo $home[0][1] ?>">
-                    
+                    <label for="p2">Paragraph 2</label>
                     <textarea name="p2"><?php echo $home[0][3] ?></textarea>
-                    <textarea name="pCard1"><?php echo $home[0][4] ?></textarea>
-                    <textarea name="pCard2"><?php echo $home[0][5] ?></textarea>
+                    <label for="card1title">Card title 1</label>
                     <input type="text" method="post" name="card1title" value="<?php echo $home[0][6] ?>">
+                    <label for="pCard1">Card 1 content</label>
+                    <textarea name="pCard1"><?php echo $home[0][4] ?></textarea>
+                    <label for="card2title">Card title 2</label>
                     <input type="text" method="post" name="card2title" value="<?php echo $home[0][7] ?>">
+                    <label for="pCard2">Card 2 content</label>
+                    <textarea name="pCard2"><?php echo $home[0][5] ?></textarea>
                     <input type='submit' value= "Change home page!">
                 </form>
                 <?php
