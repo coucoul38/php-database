@@ -45,7 +45,7 @@
                     <input type='text' name='title' value='Entrez un titre'>
                     <input type='file' name='image'>
                     <input type='submit' value='Créer le projet'>
-                </form>
+                </form><br>
                 <?php
                 foreach($projectList as $project){
                     echo "<br><b>ID :</b> ".$project[0]."<br>"; 
@@ -109,19 +109,18 @@
                 $sql = "SELECT * FROM home";
                 $pre = $pdo->prepare($sql); 
                 $pre->execute();
-                $home = $pre->fetchColumn();
+                $home = $pre->fetchall();
+                //print_r($home);
                 ?>
                 <form method='post' action ="actions/changeHome.php">
-                    <textarea name="h1"><?php echo $home['h1'] ?></textarea>
-                    <textarea name="h2"><?php echo $home['h2'] ?></textarea>
-                    <textarea name="p1"><?php echo $home['p1'] ?></textarea>
-                    <textarea name="p2"><?php echo $home['p2'] ?></textarea>
-                    <textarea name="pCard1"><?php echo $home['pCard1'] ?></textarea>
-                    <textarea name="pCard2"><?php echo $home['pCard2'] ?></textarea>
-
-                    <input type="file" name="img">
-                    <img src="<?php echo $home["img"] ?>" width="100px"  >
-
+                    <input type="text" method="post" name="h1" value="<?php echo $home[0][0] ?>">
+                    <input type="text" method="post" name="h2" value="<?php echo $home[0][1] ?>">
+                    <textarea name="p1"><?php echo $home[0][2] ?></textarea>
+                    <textarea name="p2"><?php echo $home[0][3] ?></textarea>
+                    <textarea name="pCard1"><?php echo $home[0][4] ?></textarea>
+                    <textarea name="pCard2"><?php echo $home[0][5] ?></textarea>
+                    <input type="text" method="post" name="card1title" value="<?php echo $home[0][6] ?>">
+                    <input type="text" method="post" name="card2title" value="<?php echo $home[0][7] ?>">
                     <input type='submit' value= "Change home page!">
                 </form>
                 <?php
