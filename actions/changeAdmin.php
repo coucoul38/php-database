@@ -1,5 +1,6 @@
 <?php
-require_once "../cfg/config.php"; 
+require_once "../cfg/config.php";
+require "../components/securityAdmin.php";
 $id = $_POST['id'];
 $admin = $_POST['admin'];
 if(empty($id)){

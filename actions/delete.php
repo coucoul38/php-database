@@ -1,5 +1,6 @@
 <?php
-require_once "../cfg/config.php"; 
+require_once "../cfg/config.php";
+require "../components/securityAdmin.php";
 $id = $_POST['id'];
 if(empty($id)){
     echo "Error : ID is empty";

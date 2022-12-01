@@ -9,35 +9,21 @@
 
     <body>
       <?php require "components/navbar.php"; 
-      require "cfg/config.php";?>
+      require "cfg/config.php";
+      $id = $_GET['id']; 
+      $sql = "SELECT * FROM `projects` WHERE id=$id";
+      $pre = $pdo->prepare($sql); 
+      $pre->execute();
+      $project = $pre->fetchall();
+      $name = $project[0][1];
+      $img_parallax = $project[0][2];
+      ?>
 
-      <h1 class="title center">Accueil</h1>
+      <h1 class="title center"><?php echo $name ?></h1>
 
-      <!--Slider images et texte-->
-      <div class="slider">
-        <ul class="slides">
-          <li>
-            <img src="img/helltaker.jpg" alt="helltaker"> 
-            <div class="caption center-align">
-              <h2 class="red-text text-darken-4 title flow-text">Présentation du jeu Helltaker</h2>
-              <h5 class="red-text text-darken-4">Nous avons créé un site présentant le jeu Helltaker</h5>
-            </div>
-          </li>
-          <li>
-            <img src="img/preview_minecraft3.jpg" alt="preview minecraft"> 
-            <div class="caption center-align">
-              <h2 class="green-text text-darken-4 title flow-text">Serveur Minecraft</h2>
-              <h5 class="green-text text-darken-4">Noham est en train de créer un serveur de mini-jeux Minecraft</h5>
-            </div>
-          </li>
-          <li>
-            <img src="img/murder_drones.jpg" alt="murder drones">
-            <div class="caption center-align">
-              <h2 class="blue-text text-darken-4 title flow-text">Murder Drones</h2>
-              <h5 class="blue-text text-darken-4">Présentation d'un épisode pilote qui nous tient à coeur</h5>
-            </div>
-          </li>
-        </ul>
+      <!--Paralaxe-->
+      <div class="parallax-container">
+        <div class="parallax"><img src="img/<?php echo $img_parallax; ?>" alt="minecraft"></div>
       </div>
       
       <?php require "components/footer.php" ?>

@@ -5,11 +5,14 @@ echo "</pre>"
 ?>
 
 <?php
-require_once "../cfg/config.php"; 
+require_once "../cfg/config.php";
+require "../components/securityAdmin.php";
+require "upload_file.php";
 $projectName = $_POST['title'];
-$sql = "INSERT INTO projects(name) VALUES (:title)";
+$sql = "INSERT INTO projects(name, img_parallax) VALUES (:title, :img_parallax)";
 $dataBinded=array(
-    ':title' => $projectName
+    ':title' => $projectName,
+    ':img_parallax' => $destination
 );
 
 if(empty($projectName)){
