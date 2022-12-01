@@ -54,7 +54,11 @@
                         <input type='hidden' name="id" value="<?php echo $project[0]; ?>">
                         <input type='text' name="newName" value="<?php echo $project[1]; ?>">
                         <input type='submit' value="Change name">
+                    </form>
+                    <form method='post' action="actions/changeImg.php" enctype="multipart/form-data">
                         <input type='file' name='image'>
+                        <input type='hidden' name="id" value="<?php echo $project[0]; ?>">
+                        <input type='submit' value='change image'>
                     </form>
                     <form method='post' action="actions/delete.php?id=project">
                         <input type='hidden' name="id" value="<?php echo $project[0]; ?>">
@@ -103,7 +107,7 @@
                 $sql = "SELECT * FROM home";
                 $pre = $pdo->prepare($sql); 
                 $pre->execute();
-                $home = $pre->fetchColumn();
+                $home = $pre->fetchColumn(PDO::FETCH_ASS0C);
                 ?>
                 <form method='post' action ="actions/changeHome.php">
                     <textarea name="h1"><?php echo $home['h1'] ?></textarea>
@@ -123,4 +127,4 @@
         }
         ?>
     </body>
-</html>
+</html> 
