@@ -40,7 +40,6 @@
                 <?php
                 echo "Email : ".$user[2]."<br>";
                 echo "Password : ".$user[3]."<br>";
-                echo $user[4]==0?"Utilisateur":"Admin";
                 ?>
                 <form method='post' action="actions/deleteUser.php">
                     <input type='hidden' name="id" value="<?php echo $user[0]; ?>">
