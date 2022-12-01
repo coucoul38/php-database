@@ -53,12 +53,14 @@
                     <form method='post' action="actions/rename.php?id=project" enctype="multipart/form-data">
                         <input type='hidden' name="id" value="<?php echo $project[0]; ?>">
                         <input type='text' name="newName" value="<?php echo $project[1]; ?>">
-                        <input type='submit' value="Change name">
+                        <input type='text' name="h2" value="<?php echo $project[3]; ?>">
+                        <textarea name="p1"><?php echo $project[4]?></textarea>
+                        <input type='submit' value="Update project">
                     </form>
                     <form method='post' action="actions/changeImg.php" enctype="multipart/form-data">
                         <input type='file' name='image'>
                         <input type='hidden' name="id" value="<?php echo $project[0]; ?>">
-                        <input type='submit' value='change image'>
+                        <input type='submit' value='Change image'>
                     </form>
                     <form method='post' action="actions/delete.php?id=project">
                         <input type='hidden' name="id" value="<?php echo $project[0]; ?>">

@@ -2,21 +2,23 @@
   <html lang="fr">
     <head>
       <?php 
-      $title = "Php projet Noham et Justin";
+      require "cfg/config.php";
+      $id = $_GET['id'];
+      $sql = "SELECT * FROM `projects` WHERE id=$id";
+      $pre = $pdo->prepare($sql); 
+      $pre->execute();
+      $project = $pre->fetchall();
+      $name = $project[0][1];
+      $title = "Projet ".$id.": ".$name;
       require "components/head.php"; 
       ?>
     </head>
 
     <body>
       <?php require "components/navbar.php"; 
-      require "cfg/config.php";
-      $id = $_GET['id']; 
-      $sql = "SELECT * FROM `projects` WHERE id=$id";
-      $pre = $pdo->prepare($sql); 
-      $pre->execute();
-      $project = $pre->fetchall();
-      $name = $project[0][1];
       $img_parallax = $project[0][2];
+      $h2 = $project[0][3];
+      $p1 = $project[0][4];
       ?>
 
       <h1 class="title center"><?php echo $name; ?></h1>
@@ -25,7 +27,13 @@
       <div class="parallax-container">
         <div class="parallax"><img src="img/<?php echo $img_parallax; ?>" alt="img parallax"></div>
       </div>
-      
+
+      <div class="row container flow-text">
+        <div class="col m8 s12">
+          <h2><?php echo $h2; ?></h2>
+          <p><?php echo $p1; ?></p>
+        </div>
+      </div>
       <?php require "components/footer.php" ?>
 
       <!--JavaScript at end of body for optimized loading-->
