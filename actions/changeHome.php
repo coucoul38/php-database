@@ -10,7 +10,7 @@ if($home){
     echo $_POST['p1'];
     echo $_POST['p2'];
     echo $_POST['pCard1'];
-    echo $_POST['pC a'];
+    echo $_POST['pCar'];
     $pre = $pdo->prepare($sql); 
     $pre->execute();
     header("Location:../index.php");//on le redirige sur la page d'accueil du site !
