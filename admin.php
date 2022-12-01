@@ -31,7 +31,13 @@
             //print_r($userList);
             foreach($userList as $user){
                 echo "ID : ".$user[0]."<br>"; 
-                echo "Username : ".$user[1]."<br>";
+                echo "Username : ".$user[1]."<br>";?>
+                <form method='post' action="actions/renameUser.php">
+                    <input type='hidden' name="id" value="<?php echo $user[0]; ?>">
+                    <input type='text' name="name" value="<?php $user[1] ?>">
+                    <input type='submit' value="Change name">
+                </form>
+                <?php
                 echo "Email : ".$user[2]."<br>";
                 echo "Password : ".$user[3]."<br>";
                 echo $user[4]==0?"Utilisateur":"Admin";
