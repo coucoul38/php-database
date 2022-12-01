@@ -10,7 +10,7 @@
       $project = $pre->fetchall();
       $name = $project[0][1];
       $title = "Projet ".$id.": ".$name;
-      require "components/head.php"; 
+      require "components/head.php";
       ?>
     </head>
 
