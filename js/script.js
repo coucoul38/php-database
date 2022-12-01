@@ -11,8 +11,6 @@ $(document).ready(function(){
     $('.modal').modal();
     $('.parallax').parallax();
     $('.pushpin').pushpin();
-
-    
   });
 
   const animateCSS = (element, animation, prefix = 'animate__') =>

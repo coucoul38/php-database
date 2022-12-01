@@ -10,6 +10,6 @@ else{
     $sql = "UPDATE users SET username = '$newUsername' WHERE id='$id'";
     $pre = $pdo->prepare($sql); 
     $pre->execute();
-    header("Location:../admin.php");//on le redirige sur la page d'accueil du site !
+    header("Location:../admin.php?id=users");//on le redirige sur la page d'accueil du site !
 }
 ?>
