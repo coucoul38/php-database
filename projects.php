@@ -16,7 +16,7 @@
 
     <body>
       <?php require "components/navbar.php"; 
-      $img_parallax = "../".$project[0][2];
+      $img_parallax = $project[0][2];
       $h2 = $project[0][3];
       $p1 = $project[0][4];
       ?>
@@ -25,7 +25,7 @@
 
       <!--Paralaxe-->
       <div class="parallax-container">
-        <div class="parallax"><img src="<?php echo $img_parallax; ?>" alt="img parallax"></div>
+        <div class="parallax"><img src="<?php echo $img_parallax;?>" alt="img parallax"></div>
       </div>
 
       <div class="row container flow-text">
