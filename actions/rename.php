@@ -28,8 +28,7 @@ else{
         header("Location:../admin.php?id=users");//on le redirige sur la page d'accueil du site !
     }
     else{
-        echo $h2;
-        //header("Location:../admin.php?id=projects");//on le redirige sur la page d'accueil du site !
+        header("Location:../admin.php?id=projects");//on le redirige sur la page d'accueil du site !
     }
 }
 ?>
