@@ -5,6 +5,7 @@ $id = $_POST['id'];
 $newName = $_POST['newName'];
 $h2 = $_POST['h2'];
 $p1 = $_POST['p1'];
+$description = $_POST['description'];
 if(empty($id)){
     echo "Error : ID is empty";
 }
@@ -14,13 +15,7 @@ else{
         $sql = "UPDATE users SET username = '$newName' WHERE id='$id'";
     }
     elseif($_GET['id']=='project'){
-        $sql = "UPDATE projects SET name = '$newName' WHERE id='$id'";
-        $pre = $pdo->prepare($sql); 
-        $pre->execute();
-        $sql = "UPDATE projects SET h2 = '$h2' WHERE id='$id'";
-        $pre = $pdo->prepare($sql); 
-        $pre->execute();
-        $sql = "UPDATE projects SET p1 = '$p1' WHERE id='$id'";
+        $sql = "UPDATE projects SET name='$newName', h2='$h2', p1='$p1', description='$description' WHERE id='$id'";
     }
     $pre = $pdo->prepare($sql); 
     $pre->execute();

@@ -16,7 +16,7 @@
 
     <body>
       <?php require "components/navbar.php"; 
-      $img_parallax = $project[0][2];
+      $img_parallax = "../".$project[0][2];
       $h2 = $project[0][3];
       $p1 = $project[0][4];
       ?>

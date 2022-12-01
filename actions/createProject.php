@@ -26,10 +26,10 @@ else{
 if($sendToDb){
     $pre = $pdo->prepare($sql);
     $pre->execute($dataBinded);
-    //header('Location:../admin.php?id=projects');//on le redirige sur la page d'accueil du site
+    header('Location:../admin.php?id=projects');//on le redirige sur la page d'accueil du site
 }
 else{
     echo $_SESSION['error'];
-    //header('Location:../admin.php?id=projects');//on le redirige sur la page d'accueil du site !
+    header('Location:../admin.php?id=projects');//on le redirige sur la page d'accueil du site !
 }
 ?>

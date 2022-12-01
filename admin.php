@@ -52,8 +52,13 @@
                     ?>
                     <form method='post' action="actions/rename.php?id=project" enctype="multipart/form-data">
                         <input type='hidden' name="id" value="<?php echo $project[0]; ?>">
+                        <label for="description">Description</label>
+                        <textarea name="description"><?php echo $project[5]?></textarea>
+                        <label for="newName">Name</label>
                         <input type='text' name="newName" value="<?php echo $project[1]; ?>">
+                        <label for="h2">h2</label>
                         <input type='text' name="h2" value="<?php echo $project[3]; ?>">
+                        <label for="p1">Text</label>
                         <textarea name="p1"><?php echo $project[4]?></textarea>
                         <input type='submit' value="Update project">
                     </form>
@@ -112,6 +117,7 @@
                 $home = $pre->fetchall();
                 //print_r($home);
                 ?>
+                <p>Attention : bien mettre un \ devant les guillemets</p>
                 <form method='post' action ="actions/changeHome.php">
                     <input type="text" method="post" name="h1" value="<?php echo $home[0][0] ?>">
                     <input type="text" method="post" name="h2" value="<?php echo $home[0][1] ?>">
