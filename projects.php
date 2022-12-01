@@ -23,7 +23,7 @@
 
       <!--Paralaxe-->
       <div class="parallax-container">
-        <div class="parallax"><img src="img/<?php echo $img_parallax; ?>" alt="minecraft"></div>
+        <div class="parallax"><img src="img/<?php echo $img_parallax; ?>" alt="img parallax"></div>
       </div>
       
       <?php require "components/footer.php" ?>
