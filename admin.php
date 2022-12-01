@@ -52,10 +52,10 @@
                     ?>
                     <form method='post' action="actions/rename.php?id=project" enctype="multipart/form-data">
                         <input type='hidden' name="id" value="<?php echo $project[0]; ?>">
-                        <label for="description">Description</label>
-                        <textarea name="description"><?php echo $project[5]?></textarea>
                         <label for="newName">Name</label>
                         <input type='text' name="newName" value="<?php echo $project[1]; ?>">
+                        <label for="description">Description</label>
+                        <textarea name="description"><?php echo $project[5]?></textarea>
                         <label for="h2">h2</label>
                         <input type='text' name="h2" value="<?php echo $project[3]; ?>">
                         <label for="p1">Text</label>
