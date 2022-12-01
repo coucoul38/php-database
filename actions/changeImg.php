@@ -16,6 +16,7 @@ else{
         $sql = "UPDATE projects SET img_parallax = '$img' WHERE id='$id'";
         $pre = $pdo->prepare($sql); 
         $pre->execute();
+        echo $img;
         header("Location:../admin.php?id=projects");//on le redirige sur la page d'accueil du site !
     }
 }
