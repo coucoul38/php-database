@@ -19,7 +19,7 @@
       $img_parallax = $project[0][2];
       ?>
 
-      <h1 class="title center"><?php echo $name ?></h1>
+      <h1 class="title center"><?php echo $name; ?></h1>
 
       <!--Paralaxe-->
       <div class="parallax-container">
