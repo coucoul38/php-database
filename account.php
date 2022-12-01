@@ -26,7 +26,7 @@
             <p>
               <?php if(isset($_GET['id']) && $_GET['id']=="login"){
                 echo "<form method=\"post\" action=\"actions/login.php\">
-                <input type='text' name='username' placeholder=\"Pseudonyme\" class=\"white-text\">
+                <input type='text' name='email' placeholder=\"Adresse mail\" class=\"white-text\">
                 <input type='password' name='password' placeholder=\"Mot de passe\" class=\"white-text\">
                 <input type='submit' name='login' value='Se connecter'>
             </form>";
@@ -52,24 +52,26 @@
         </div>
       </div>
     </div>
-    <?php } 
+    <?php 
+      if(isset($_SESSION['error'])){
+        echo "<h4 class=\"red center-align\">".$_SESSION['error']."</h4>";
+        unset($_SESSION['error']);
+        unset($_SESSION['user']);
+      }
+    } 
     //Si l'utilisateur est connecté
     else{
-      echo "Bienvenue ".$_SESSION['user']['username'];
-      if($_SESSION['user']['admin']==1){
-        echo "Vous êtes admin!";
-        echo "<form method='post' action=\"admin.php?id=users\">
-        <input type='submit' name='adminPanel' value='Pannel admin'>
-      </form>";
-      }
-      echo "<form method='post' action=\"actions/logout.php\">
+        echo "Bienvenue ".$_SESSION['user']['username'];
+        echo "<form method='post' action=\"actions/logout.php\">
         <input type='submit' name='logout' value='Se déconnecter'>
-      </form>";
+        </form>";
+        if($_SESSION['user']['admin']==1){
+          echo "Vous êtes admin!";
+          echo "<form method='post' action=\"admin.php?id=users\">
+            <input type='submit' name='adminPanel' value='Pannel admin'>
+          </form>";
+        }
     }
-    if(isset($_SESSION['error'])){
-      echo "<h4 class=\"red center-align\">".$_SESSION['error']."</h4>";
-    }
-    unset($_SESSION['error']);
     ?>
     
     <?php require "components/footer.php" ?>
