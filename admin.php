@@ -30,11 +30,11 @@
             $userList = $pre->fetchall();
             //print_r($userList);
             foreach($userList as $user){
-                echo "ID : ".$user[0]."<br>"; 
-                echo "Username : ".$user[1]."<br>";?>
+                echo "<br>ID : ".$user[0]."<br>"; 
+                ?>
                 <form method='post' action="actions/renameUser.php">
                     <input type='hidden' name="id" value="<?php echo $user[0]; ?>">
-                    <input type='text' name="name" value="<?php $user[1] ?>">
+                    <input type='text' name="name" value="<?php echo $user[1] ?>">
                     <input type='submit' value="Change name">
                 </form>
                 <?php
