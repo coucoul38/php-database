@@ -48,6 +48,7 @@
                 </form>
                 <form method='post' action="actions/changeAdmin.php">
                     <input type='hidden' name='id' value="<?php echo $user[0]; ?>">
+                    <input type='hidden' name='admin' value="<?php echo $user[4]; ?>">
                     <input type='submit' value='<?php echo $user[4]==0?"Utilisateur":"Admin"?>'>
                 </form>
                 <br><br>
