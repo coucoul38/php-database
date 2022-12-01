@@ -107,7 +107,7 @@
                 $sql = "SELECT * FROM home";
                 $pre = $pdo->prepare($sql); 
                 $pre->execute();
-                $home = $pre->fetchColumn(PDO::FETCH_ASS0C);
+                $home = $pre->fetchColumn();
                 ?>
                 <form method='post' action ="actions/changeHome.php">
                     <textarea name="h1"><?php echo $home['h1'] ?></textarea>
