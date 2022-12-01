@@ -119,9 +119,13 @@
                 ?>
                 <p>Attention : bien mettre un \ devant les guillemets</p>
                 <form method='post' action ="actions/changeHome.php">
+                    <label for="h1">Title</label>
                     <input type="text" method="post" name="h1" value="<?php echo $home[0][0] ?>">
-                    <input type="text" method="post" name="h2" value="<?php echo $home[0][1] ?>">
+                    <label for="p2">Paragraph 1</label>
                     <textarea name="p1"><?php echo $home[0][2] ?></textarea>
+                    <label for="h2">Second title</label>
+                    <input type="text" method="post" name="h2" value="<?php echo $home[0][1] ?>">
+                    
                     <textarea name="p2"><?php echo $home[0][3] ?></textarea>
                     <textarea name="pCard1"><?php echo $home[0][4] ?></textarea>
                     <textarea name="pCard2"><?php echo $home[0][5] ?></textarea>
