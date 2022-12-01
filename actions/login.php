@@ -1,7 +1,7 @@
 <?php
 require_once "../cfg/config.php"; 
 $username = $_POST['username'];
-$password = hash("sha256", "$_POST['password']", FALSE);
+$password = hash("sha256", "jijrfjiohh&__àuioehuihejkdjkhedhhuie64554556fehhuiyuhjdfj".$_POST['password'], FALSE);
 $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
 $pre = $pdo->prepare($sql); 
 $pre->execute();
