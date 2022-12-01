@@ -8,7 +8,7 @@ echo "</pre>"
 require_once "../cfg/config.php"; 
 $username = $_POST['username'];
 $email = $_POST['email'];
-$password = $_POST['password'];
+$password = hash("sha256", "$_POST['password']", FALSE);
 
 $sql = "INSERT INTO users(username,email,password) VALUES(:username,:email,:password)";
 $dataBinded=array(
