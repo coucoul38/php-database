@@ -25,7 +25,7 @@
 
       <!--Paralaxe-->
       <div class="parallax-container">
-        <div class="parallax"><img src="img/<?php echo $img_parallax; ?>" alt="img parallax"></div>
+        <div class="parallax"><img src="<?php echo $img_parallax; ?>" alt="img parallax"></div>
       </div>
 
       <div class="row container flow-text">
