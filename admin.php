@@ -45,7 +45,21 @@
                     <input type='text' name='title' value='Entrez un titre'>
                     <input type='submit' value='Créer le projet'>
                 </form>
+                <?php
+                foreach($projectList as $project){
+                    echo "<br><b>ID :</b> ".$project[0]."<br>"; 
+                    ?>
+                    <form method='post' action="actions/rename.php?id=project">
+                        <input type='hidden' name="id" value="<?php echo $project[0]; ?>">
+                        <input type='text' name="newName" value="<?php echo $project[1] ?>">
+                        <input type='submit' value="Change name">
+                    </form>
+                    <form method='post' action="actions/delete.php?id=project">
+                        <input type='hidden' name="id" value="<?php echo $project[0]; ?>">
+                        <input type='submit' value='Delete project'>
+                    </form>
             <?php
+                }
             }
             elseif($_GET['id']=="users"){
                 $sql = "SELECT COUNT(*) FROM users";
@@ -62,16 +76,16 @@
                 foreach($userList as $user){
                     echo "<br><b>ID :</b> ".$user[0]."<br>"; 
                     ?>
-                    <form method='post' action="actions/renameUser.php">
+                    <form method='post' action="actions/rename.php?id=user">
                         <input type='hidden' name="id" value="<?php echo $user[0]; ?>">
-                        <input type='text' name="username" value="<?php echo $user[1] ?>">
+                        <input type='text' name="newName" value="<?php echo $user[1] ?>">
                         <input type='submit' value="Change name">
                     </form>
                     <?php
                     echo "<b>Email :</b> ".$user[2]."<br>";
                     echo "<b>Password :</b> ".$user[3]."<br>";
                     ?>
-                    <form method='post' action="actions/deleteUser.php">
+                    <form method='post' action="actions/delete.php?id=user">
                         <input type='hidden' name="id" value="<?php echo $user[0]; ?>">
                         <input type='submit' value='Delete user'>
                     </form>
